@@ -1,0 +1,1 @@
+import{c as s,w as o,i as t,o as a,a as c}from"./index-CO998JcO.js";const n=((s,o)=>{const t=s.__vccOpts||s;for(const[a,c]of o)t[a]=c;return t})({},[["render",function(n,e){const r=t;return a(),s(r,{class:"container"},{default:o((()=>[c(" hello ")])),_:1})}],["__scopeId","data-v-0f4c7293"]]);export{n as default};

@@ -4,6 +4,16 @@
 		"style": {
 			"navigationBarTitleText": "Mix Blog"
 		}
+	}, {
+		"path": "pages/login/login",
+		"style": {
+			"navigationBarTitleText": "用户登录"
+		}
+	}, {
+		"path": "pages/register/register",
+		"style": {
+			"navigationBarTitleText": "用户注册"
+		}
 	}],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

@@ -1,5 +1,106 @@
+/* 水平间距 */
+/* 水平间距 */
+.uni-popup[data-v-4dd3c44b] {
+  position: fixed;
+  z-index: 99;
+}
+.uni-popup.top[data-v-4dd3c44b], .uni-popup.left[data-v-4dd3c44b], .uni-popup.right[data-v-4dd3c44b] {
+  top: 0;
+}
+.uni-popup .uni-popup__wrapper[data-v-4dd3c44b] {
+  display: block;
+  position: relative;
+  /* iphonex 等安全区设置，底部安全区适配 */
+}
+.uni-popup .uni-popup__wrapper.left[data-v-4dd3c44b], .uni-popup .uni-popup__wrapper.right[data-v-4dd3c44b] {
+  padding-top: 0;
+  flex: 1;
+}
+.fixforpc-z-index[data-v-4dd3c44b] {
+  z-index: 999;
+}
+.fixforpc-top[data-v-4dd3c44b] {
+  top: 0;
+}
 
 .container {
 		height: 100%;
 		background-color: #f4f2ec;
+		display: flex;
+		flex-direction: column;
+}
+.navbar {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		height: 44px;
+		padding: 0 10px;
+		background-color: #ffffff;
+		border-bottom: 1px solid #e0e0e0;
+		position: relative;
+		z-index: 999;
+}
+.nav-left {
+		flex: 1;
+}
+.logo {
+		width: 30px;
+		height: 30px;
+}
+.nav-center {
+		flex: 2;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		align-items: center;
+}
+.nav-item {
+		font-size: 14px;
+		color: #333333;
+		padding: 5px 10px;
+}
+.nav-item:first-child {
+		color: #007AFF;
+		font-weight: bold;
+		border-bottom: 2px solid #007AFF;
+}
+.nav-right {
+		flex: 1;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		position: relative;
+}
+.more-icon {
+		font-family: "customicons" !important;
+		font-size: 20px;
+		color: #333333;
+		cursor: pointer;
+}
+.popup-menu {
+		background-color: #ffffff;
+		border-radius: 0 0 5px 5px;
+		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+		width: 120px;
+		margin-left: auto;
+		margin-top: 44px;
+		margin-right: 10px;
+}
+.menu-item {
+		padding: 15px;
+		font-size: 14px;
+		color: #333333;
+		text-align: center;
+		border-bottom: 1px solid #f0f0f0;
+}
+.menu-item:last-child {
+		border-bottom: none;
+}
+.menu-item:active {
+		background-color: #f0f0f0;
+}
+.content {
+		flex: 1;
+		padding: 10px;
 }
