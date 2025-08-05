@@ -7,12 +7,12 @@
 	}, {
 		"path": "pages/login/login",
 		"style": {
-			"navigationBarTitleText": "用户登录"
+			"navigationBarTitleText": "登录"
 		}
 	}, {
 		"path": "pages/register/register",
 		"style": {
-			"navigationBarTitleText": "用户注册"
+			"navigationBarTitleText": "注册"
 		}
 	}],
 	"globalStyle": {
