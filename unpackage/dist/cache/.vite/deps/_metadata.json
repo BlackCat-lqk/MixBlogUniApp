@@ -1,8 +1,15 @@
 {
-  "hash": "c5eaf165",
+  "hash": "b599a036",
   "configHash": "75d1f329",
-  "lockfileHash": "2c2fb073",
-  "browserHash": "b720b41b",
-  "optimized": {},
+  "lockfileHash": "99dbaad3",
+  "browserHash": "88614b92",
+  "optimized": {
+    "ogl": {
+      "src": "../../../../../node_modules/ogl/src/index.js",
+      "file": "ogl.js",
+      "fileHash": "1e3c6953",
+      "needsInterop": false
+    }
+  },
   "chunks": {}
 }

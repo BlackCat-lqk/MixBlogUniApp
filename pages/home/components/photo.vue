@@ -1,4 +1,7 @@
 <template>
+    <view>
+        photo
+    </view>
 </template>
 
 <script>

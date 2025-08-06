@@ -11,7 +11,7 @@
     "sourceMap": true,
     "baseUrl": ".",
     "types": [
-      "@dcloudio/types"
+      "@dcloudio/types",
     ],
     "paths": {
       "@/*": [

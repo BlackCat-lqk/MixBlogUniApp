@@ -1,4 +1,7 @@
 <template>
+    <view>
+        notes
+    </view>
 </template>
 
 <script>

@@ -1,5 +1,8 @@
 {
   "devDependencies": {
     "@dcloudio/types": "^3.4.19"
+  },
+  "dependencies": {
+    "ogl": "^1.0.11"
   }
 }
