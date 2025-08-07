@@ -1,15 +1,8 @@
 {
-  "hash": "b599a036",
-  "configHash": "75d1f329",
+  "hash": "239b0ac7",
+  "configHash": "13bdfafe",
   "lockfileHash": "99dbaad3",
-  "browserHash": "88614b92",
-  "optimized": {
-    "ogl": {
-      "src": "../../../../../node_modules/ogl/src/index.js",
-      "file": "ogl.js",
-      "fileHash": "1e3c6953",
-      "needsInterop": false
-    }
-  },
+  "browserHash": "1bff8132",
+  "optimized": {},
   "chunks": {}
 }

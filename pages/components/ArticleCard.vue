@@ -11,7 +11,7 @@
     >
       <div class="article-card-header">
         <div class="article-card-header-img">
-          <img :src="item.cover" alt="文章封面" loading="lazy" />
+          <image src="@/static/logo-transparent.webp" alt="文章封面" loading="lazy" />
         </div>
         <div class="article-card-header-title">
           <p class="p-h3">{{ item.title }}</p>
@@ -25,31 +25,30 @@
       </div>
       <div class="article-card-footer">
         <span>
-          分类:
-          <n-tag :bordered="false">{{ item.category }}</n-tag>
-          &nbsp;标签:
-          <n-tag
+					<uni-tag :text="item.category" type="primary" :circle="true"></uni-tag>
+          &nbsp;
+          <uni-tag
             style="margin-right: 5px"
             v-for="(tag, idx) in item.tags"
             :key="idx"
-            :bordered="false"
-            round
-            type="info"
+            circle
+            type="default"
+						:text="tag"
+						:circle="true"
           >
-            {{ tag }}
-          </n-tag>
+          </uni-tag>
         </span>
         <div class="views-comment-icon">
           <span>
-            <img width="20px" src="@/assets/images/likes.svg" alt="点赞" />
+            <image width="20px" src="@/static/likes.svg" alt="点赞" />
             {{ item.likes.length }}
           </span>
           <span>
-            <img width="20px" src="@/assets/images/views.svg" alt="浏览" />
+            <image width="20px" src="@/static/views.svg" alt="浏览" />
             {{ item.views.length }}
           </span>
           <span>
-            <img width="20px" src="@/assets/images/comment.svg" alt="评论" />
+            <image width="20px" src="@/static/comment.svg" alt="评论" />
             {{ item.comments.length }}
           </span>
         </div>
@@ -60,6 +59,7 @@
 </template>
 <script setup>
 import { _formatTime } from '@/utils/publickFun.js'
+import { ref, reactive } from 'vue'
 // import ArticleDetail from '@/views/Article/ArticleDetail.vue'
 // const showActiveDrawer = ref(false)
 let articleDetail = reactive({
@@ -87,28 +87,25 @@ const articleClick = (data) => {
 </script>
 <style lang="scss" scoped>
 .article-cards-box {
-  display: grid;
-  gap: 32px 40px;
-  justify-content: center;
   .article-card-box {
-    border-radius: 16px;
-    padding: 24px;
-    margin-top: 28px;
+    border-radius: 8px;
+    padding: 8px;
     cursor: pointer;
     transition: all 0.2s;
-    background-color: var(--box-bg-color1);
-    box-shadow: 0 0 10px 0 var(--border-color);
+    background-color: #fff;
+    box-shadow: 0 0 4px 0 #6a6563;
+		margin: 50px 10px 0 10px;
     .article-card-header {
-      margin-top: -53px;
+      margin-top: -38px;
       display: flex;
       align-items: center;
       gap: 24px;
       .article-card-header-img {
-        width: 160px;
-        height: 120px;
+        width: 120px;
+        height: 80px;
         border-radius: 5px;
         overflow: hidden;
-        img {
+        image {
           width: 100%;
           height: 100%;
           object-fit: contain;
@@ -119,7 +116,7 @@ const articleClick = (data) => {
         padding-top: 16px;
         .p-h3 {
           padding-top: 16px;
-          font-size: 20px;
+          font-size: 1rem;
           line-height: 1.4;
           font-weight: 600;
           transition: all 0.2s;
@@ -134,7 +131,7 @@ const articleClick = (data) => {
     }
     .article-card-content {
       height: 44px;
-      padding: 15px 0;
+      padding: 5px 0;
       p {
         height: 44px;
         overflow: hidden;
@@ -142,7 +139,6 @@ const articleClick = (data) => {
         -webkit-box-orient: vertical;
         text-overflow: ellipsis;
         font-size: 14px;
-        line-height: 1.54;
         color: var(--text-color1);
       }
     }
@@ -151,18 +147,21 @@ const articleClick = (data) => {
       justify-content: space-between;
       align-items: center;
       span {
-        font-size: 14px;
-        line-height: 1.54;
+        font-size: 12px;
         color: var(--text-color2);
       }
       .views-comment-icon {
         display: flex;
         align-items: center;
-        gap: 15px;
+        gap: 4px;
+				image {
+					width: 20px;
+					height: 20px;
+				}
         span {
           display: flex;
           align-items: center;
-          gap: 8px;
+          gap: 2px;
         }
       }
     }

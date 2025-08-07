@@ -1,10 +1,10 @@
 <template>
-	<view>
+	<view class="footer-box">
 		<view class="grid-a-section">
 			<uni-section title="技术支持" type="line" padding>
 				<swiper class="swiper" :indicator-dots="true">
 					<swiper-item>
-						<uni-grid :column="4" :highlight="true" @change="change">
+						<uni-grid :column="4" :highlight="true">
 							<uni-grid-item v-for="(item, index) in supportData.slice(0, 4)" :index="index" :key="index">
 								<view class="grid-item-box">
 									<a :href="item.url" target="_blank">
@@ -15,7 +15,7 @@
 						</uni-grid>
 					</swiper-item>
 					<swiper-item>
-						<uni-grid :column="4" :highlight="true" @change="change">
+						<uni-grid :column="4" :highlight="true">
 							<uni-grid-item v-for="(item, index) in supportData.slice(4, 8)" :index="index" :key="index">
 								<view class="grid-item-box">
 									<a :href="item.url" target="_blank">
@@ -26,7 +26,7 @@
 						</uni-grid>
 					</swiper-item>
 					<swiper-item>
-						<uni-grid :column="4" :highlight="true" @change="change">
+						<uni-grid :column="4" :highlight="true">
 							<uni-grid-item v-for="(item, index) in supportData.slice(8, 12)" :index="index" :key="index">
 								<view class="grid-item-box">
 									<a :href="item.url" target="_blank">
@@ -37,7 +37,7 @@
 						</uni-grid>
 					</swiper-item>
 					<swiper-item>
-						<uni-grid :column="4" :highlight="true" @change="change">
+						<uni-grid :column="4" :highlight="true">
 							<uni-grid-item v-for="(item, index) in supportData.slice(12, 16)" :index="index" :key="index">
 								<view class="grid-item-box">
 									<a :href="item.url" target="_blank">
@@ -48,7 +48,7 @@
 						</uni-grid>
 					</swiper-item>
 					<swiper-item>
-						<uni-grid :column="4" :highlight="true" @change="change">
+						<uni-grid :column="4" :highlight="true">
 							<uni-grid-item v-for="(item, index) in supportData.slice(16, 20)" :index="index" :key="index">
 								<view class="grid-item-box">
 									<a :href="item.url" target="_blank">
@@ -62,9 +62,9 @@
 			</uni-section>
 		</view>
 		<view class="footer-info">
-			<text>Mix Blog 1.1.0 · Made by LQK</text>
+			<text class="text-p1">Mix Blog 1.1.0 · Made by LQK</text>
 			<view></view>
-			<text>备案/许可证 &nbsp;<a href="https://beian.miit.gov.cn/#/Integrated/index">桂ICP备2025066402号</a></text>
+			<text class="text-p2">备案/许可证 &nbsp;<a href="https://beian.miit.gov.cn/#/Integrated/index">桂ICP备2025066402号</a></text>
 		</view>
 	</view>
 </template>
@@ -194,6 +194,9 @@
 </script>
 
 <style lang="scss" scoped>
+	.footer-box{
+		margin-top: 40px;
+	}
 :deep(uni-swiper) {
 	height: 110px !important;
 }
@@ -212,6 +215,13 @@
 }
 .footer-info {
 	text-align: center;
-
+	padding: 10px 0;
+	.text-p1 {
+		font-size: 14px;
+	}
+	.text-p2 {
+		font-size: 14px;
+		color: rgba(11, 25, 38, .72);
+	}
 }
 </style>

@@ -18,7 +18,7 @@
 .home-data-container {
     margin-top: 20px;
     display: flex;
-    gap: 12px;
+    gap: 24px;
     justify-content: center;
     margin: 20px 10px;
     .total-count, .today-count {
@@ -28,7 +28,7 @@
         align-items: center;
         flex-direction: column;
         background-color: #fff;
-        padding: 30px;
+        padding: 10px;
         border-radius: 8px;
         border: 1px solid #ccc;
         span{

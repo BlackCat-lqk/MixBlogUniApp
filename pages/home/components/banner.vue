@@ -27,7 +27,7 @@ import { ref } from "vue";
 
 const current = ref(0);
 const swiperDotIndex = ref(0);
-const info = ref(
+const info = ref([
   {
     colorClass: "uni-bg-red",
     url: "https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/shuijiao.jpg",
@@ -38,7 +38,7 @@ const info = ref(
     url: "https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/shuijiao.jpg",
     content: "内容 B",
   }
-);
+]);
 
 const change = (e) => {
   current.value = e.detail.current;

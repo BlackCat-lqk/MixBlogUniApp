@@ -12,9 +12,9 @@
 				<text class="nav-item">关于</text>
 			</view>
 			<view class="nav-right">
-				<text class="customicons more-icon">
+				<view class="customicons more-icon">
 					<image class="logo" @click="openMenu" src="/static/moreiconfont.svg"></image>
-				</text>
+				</view>
 			</view>
 		</view>
 		<uni-popup ref="popup" type="top" :mask-click="true">
