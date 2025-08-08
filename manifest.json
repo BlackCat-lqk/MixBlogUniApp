@@ -1,7 +1,7 @@
 {
     "name" : "mixBlogUniApp",
     "appid" : "__UNI__DC39071",
-    "description" : "",
+    "description" : "MIX BLOG 是一个融合技术教程、生活分享与学习心得的个人博客。涵盖编程、科技、工具、实用功能、AI、日常思考与实用知识，希望带给你灵感与收获。",
     "versionName" : "1.0.0",
     "versionCode" : "100",
     "transformPx" : false,
@@ -56,5 +56,36 @@
         },
         "usingComponents" : true
     },
-    "vueVersion" : "3"
+    "vueVersion" : "3",
+    "h5" : {
+        "devServer" : {
+            "port" : "3000",
+            "https" : false,
+            "proxy" : {
+                "/api" : {
+                    "target" : "http://localhost:3000",
+                    "changeOrigin" : true,
+                    "pathRewrite" : {
+                        "^/api" : ""
+                    }
+                },
+								"/uploads" : {
+								    "target" : "http://localhost:3000",
+								    "changeOrigin" : true,
+								    "pathRewrite" : {
+								        "^/uploads" : ""
+								    }
+								}
+            }
+        },
+        "router" : {
+            "mode" : "hash"
+        },
+        "optimization" : {
+            "treeShaking" : {
+                "enable" : true
+            }
+        },
+        "title" : "MixBlog"
+    }
 }

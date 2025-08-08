@@ -11,7 +11,7 @@
     >
       <div class="article-card-header">
         <div class="article-card-header-img">
-          <image src="@/static/logo-transparent.webp" alt="文章封面" loading="lazy" />
+          <image :src="item.cover" alt="文章封面" loading="lazy" />
         </div>
         <div class="article-card-header-title">
           <p class="p-h3">{{ item.title }}</p>
@@ -88,12 +88,12 @@ const articleClick = (data) => {
 <style lang="scss" scoped>
 .article-cards-box {
   .article-card-box {
-    border-radius: 8px;
+    border-radius: 4px;
     padding: 8px;
     cursor: pointer;
     transition: all 0.2s;
     background-color: #fff;
-    box-shadow: 0 0 4px 0 #6a6563;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 0px 3px 1px;
 		margin: 50px 10px 0 10px;
     .article-card-header {
       margin-top: -38px;

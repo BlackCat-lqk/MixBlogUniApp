@@ -3,30 +3,30 @@
     <div
       class="photo-gallery-centent"
     >
-      <div class="photo-gallery-bg">8</div>
+      <div class="photo-gallery-bg">{{ props.photosData.photos.length }}</div>
       <div class="photo-gallery-desc">
         <div class="photo-gallery-title">
-          <p class="p-h1">雪</p>
+          <p class="p-h1">{{ props.photosData.title }}</p>
           <div class="photo-gallery-title-data">
-            <p>2022-02-05</p>
+            <p>{{ _formatTime(props.photosData.updatedAt).date }}</p>
             <div class="views-comment-icon">
               <span>
                 <image src="@/static/likes.svg" alt="likes" />
-                {{ photoItem.likes.length }}
+                {{ props.photosData.likes.length }}
               </span>
               <span>
                 <image src="@/static/views.svg" alt="views" />
-                {{ photoItem.views.length }}
+                {{ props.photosData.views.length }}
               </span>
               <span>
                 <image src="@/static/comment.svg" alt="comment" />
-                {{ photoItem.comments.length }}
+                {{ props.photosData.comments.length }}
               </span>
             </div>
           </div>
         </div>
         <div class="photo-gallery-desc-p">
-          <p>第一次遇雪</p>
+          <p>{{ props.photosData.content }}</p>
         </div>
       </div>
     </div>
@@ -34,44 +34,14 @@
 </template>
 
 <script setup>
-import { ref, onMounted, reactive } from 'vue'
-import { _formatTime } from '@/utils/publickFun'
-const showActiveDrawer = ref(false)
-const photoItem = ref({
-  _id: '',
-  title: '',
-  photos: [],
-  content: '',
-  updatedAt: '',
-  category: '',
-  comments: [],
-  likes: [],
-  views: [],
-})
-const state = reactive({
-  photoLibrary: [],
-  step: 0,
-  dataCount: 0,
-})
-let imagesDetail = reactive({
-  _id: '',
-  title: '',
-  content: '',
-  category: '',
-  updatedAt: '',
-  photos: [],
-  comments: [],
-  likes: [],
-  views: [],
-})
-// 获取图库信息
-const getPhotoLibrary = async () => {
-  state.photoLibrary = []
-}
+import { _formatTime } from '@/utils/publickFun';
 
-onMounted(() => {
-  getPhotoLibrary()
-})
+const props = defineProps({
+	photosData: {
+    type: Object,
+    default: () => {},
+  },
+}
 </script>
 
 <style scoped lang="scss">

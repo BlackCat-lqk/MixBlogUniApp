@@ -3,15 +3,15 @@
     <uni-swiper-dot
       class="uni-swiper-dot-box"
       @clickItem="clickItem"
-      :info="info"
+      :info="bannerData"
       :current="current"
       mode="round"
     >
       <swiper class="swiper-box" @change="change" :current="swiperDotIndex">
-        <swiper-item v-for="(item, index) in info" :key="index">
+        <swiper-item v-for="(item, index) in bannerData" :key="index">
           <view class="swiper-item">
             <image
-              src="@/static/Github.svg"
+              :src="item.cover"
               class="slogan-image"
               alt="slogan Logo"
             ></image>
@@ -23,43 +23,53 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
+import {
+		getAllBanners
+	} from '@/http/banner';
 
 const current = ref(0);
 const swiperDotIndex = ref(0);
-const info = ref([
-  {
-    colorClass: "uni-bg-red",
-    url: "https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/shuijiao.jpg",
-    content: "内容 A",
-  },
-  {
-    colorClass: "uni-bg-green",
-    url: "https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/shuijiao.jpg",
-    content: "内容 B",
-  }
-]);
-
+const bannerData = ref([])
 const change = (e) => {
   current.value = e.detail.current;
 };
 const clickItem = (e) => {
   swiperDotIndex.value = e;
 };
+	// 获取banner数据
+	const getBannersData = async () => {
+		const response = await getAllBanners({})
+		const res = response.data
+		if (res.code == 200) {
+			bannerData.value = res.data
+		} else {
+			uni.showToast({
+				title: '网络错误',
+				icon: 'none',
+			});
+		}
+	}
+
+	onMounted(() => {
+		getBannersData()
+	})
 </script>
 
 <style lang="scss" scoped>
 .banner-container {
-    background-color: #fff;
-    margin-top: 20px;
+		margin: 20px 10px 0 10px;
     .swiper-item {
         display: flex;
         justify-content: center;
-        height: 180px;
+        height: 148px;
+				overflow: hidden;
         .slogan-image {
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            object-fit: cover;
+						box-shadow: rgba(0, 0, 0, 0.08) 0px 0px 3px 1px;
+						border-radius: 4px;
         }
     }
 }

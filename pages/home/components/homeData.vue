@@ -1,24 +1,44 @@
 <template>
     <view class="home-data-container">
         <view class="total-count">
-            <span>99</span>
+            <span>{{ dataList.totalCount }}</span>
             <text>总访问</text>
         </view>
         <view class="today-count">
-            <span>9</span>
+            <span>{{ dataList.todayCount }}</span>
             <text>今日访问</text>
         </view>
     </view>
 </template>
 
-<script>
+<script setup>
+import { onMounted, ref } from 'vue';
+import { getVisitStatsApi } from '@/http/visit';
+
+const dataList = ref([])
+const getVisitStats = async () => {
+	const result = await getVisitStatsApi({})
+	const res = result.data
+	if(res.code == 200){
+		dataList.value = res.data
+	}else {
+		uni.showToast({
+		       title: '网络错误',
+		       icon: 'none',
+		     });
+	}
+}
+
+onMounted(() => {
+	getVisitStats()
+})
 </script>
 
 <style scoped lang="scss">
 .home-data-container {
     margin-top: 20px;
     display: flex;
-    gap: 24px;
+    gap: 18px;
     justify-content: center;
     margin: 20px 10px;
     .total-count, .today-count {
@@ -29,8 +49,8 @@
         flex-direction: column;
         background-color: #fff;
         padding: 10px;
-        border-radius: 8px;
-        border: 1px solid #ccc;
+        border-radius: 4px;
+				box-shadow: rgba(0, 0, 0, 0.08) 0px 0px 3px 1px;
         span{
             display: block;
             font-size: 2rem;

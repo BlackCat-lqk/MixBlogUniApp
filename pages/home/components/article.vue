@@ -8,79 +8,35 @@
 
 <script setup>
 	import {
-		ref, reactive
+		ref, reactive, onMounted
 	} from 'vue'
 	import ArticleCard from '@/pages/components/ArticleCard.vue';
-
+	import {
+			getAllBlogArticleApi
+		} from '@/http/blogArticle';
 	const articleData = reactive({
-		data: [{
-			"_id": "6892b33a8d58a9fd93719cf8",
-			"uid": "686118610718bf114ed94ef8",
-			"email": "1501036045@qq.com",
-			"category": "前端",
-			"tags": [
-				"前端",
-				"插件",
-				"开发库"
-			],
-			"originalCover": "/uploads/blogArticle/articleImages-1754444602503-72150729.png",
-			"cover": "/uploads/blogArticle/compressed/articleImages-1754444602503-72150729.webp",
-			"title": "\"Lodash\" 的终极版！Vue、React 通杀！",
-			"intro": "还记得第一次用 Lodash 的惊艳吗？一行 _.debounce 搞定疯狂触发的搜索框，一个 _.cloneDeep 拯救被引用折磨的 Vuex 状态。",
-			"content": "",
-			"status": "published",
-			"views": [{
-				"ip": "219.159.153.70",
-				"userId": "686118610718bf114ed94ef8",
-				"viewedAt": "2025-08-06T13:32:18.100Z",
-				"_id": "6892b34f8d58a9fd93719d19"
-			}],
-			"likes": [{
-				"userId": "686118610718bf114ed94ef8",
-				"userName": "ikun",
-				"email": "1501036045@qq.com",
-				"likedAt": "2025-08-06T01:45:16.812Z",
-				"_id": "6892b3ac8d58a9fd93719d23"
-			}],
-			"comments": [],
-			"createdAt": "2025-08-06T01:43:22.366Z",
-			"updatedAt": "2025-08-06T13:32:18.101Z",
-			"__v": 2
-		},{
-			"_id": "6892b33a8d58a9fd93719cf8",
-			"uid": "686118610718bf114ed94ef8",
-			"email": "1501036045@qq.com",
-			"category": "前端",
-			"tags": [
-				"前端",
-				"插件",
-				"开发库"
-			],
-			"originalCover": "/uploads/blogArticle/articleImages-1754444602503-72150729.png",
-			"cover": "/uploads/blogArticle/compressed/articleImages-1754444602503-72150729.webp",
-			"title": "\"Lodash\" 的终极版！Vue、React 通杀！",
-			"intro": "还记得第一次用 Lodash 的惊艳吗？一行 _.debounce 搞定疯狂触发的搜索框，一个 _.cloneDeep 拯救被引用折磨的 Vuex 状态。",
-			"content": "",
-			"status": "published",
-			"views": [{
-				"ip": "219.159.153.70",
-				"userId": "686118610718bf114ed94ef8",
-				"viewedAt": "2025-08-06T13:32:18.100Z",
-				"_id": "6892b34f8d58a9fd93719d19"
-			}],
-			"likes": [{
-				"userId": "686118610718bf114ed94ef8",
-				"userName": "ikun",
-				"email": "1501036045@qq.com",
-				"likedAt": "2025-08-06T01:45:16.812Z",
-				"_id": "6892b3ac8d58a9fd93719d23"
-			}],
-			"comments": [],
-			"createdAt": "2025-08-06T01:43:22.366Z",
-			"updatedAt": "2025-08-06T13:32:18.101Z",
-			"__v": 2
-		}],
+		data: [],
 		columns: 2,
+	})
+	// 获取banner数据
+	const getArticleData = async () => {
+		const response = await getAllBlogArticleApi({})
+		const res = response.data
+		if (res.code == 200) {
+			if(res.data.list.length <= 3){
+				articleData.data = res.data.list
+			}else {
+				articleData.data = res.data.list.slice(0,3)
+			}
+		} else {
+			uni.showToast({
+				title: '网络错误',
+				icon: 'none',
+			});
+		}
+	}
+	onMounted(() => {
+		getArticleData()
 	})
 </script>
 

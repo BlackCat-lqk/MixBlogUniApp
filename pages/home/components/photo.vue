@@ -1,7 +1,10 @@
 <template>
   <view class="photo-box">
   	<view class="photo-title">图库</view>
-  	<image-library></image-library>
+		<view v-for="(item, idx) in photosData" :key="idx">
+			<image-library :photosData="item"></image-library>
+		</view>
+  	
   	<button class="more-button" type="primary">更多</button>
   </view>
 </template>
@@ -9,6 +12,29 @@
 <script setup>
 	import { ref, reactive, onMounted } from 'vue'
 	import ImageLibrary from '@/pages/components/ImageLibrary.vue';
+	import { getPhotoLibraryApi } from '@/http/photoLibrary';
+	
+	const photosData = reactive([])
+	
+	const getPhotoLibrary = async () => {
+		const result = await getPhotoLibraryApi({})
+		const res = result.data
+		if(res.code == 200){
+			photosData.value = res.data.list
+			console.log(photosData.value)
+			
+		}else {
+			uni.showToast({
+			       title: '网络错误',
+			       icon: 'none',
+			     });
+		}
+	}
+	
+	onMounted(() => {
+		getPhotoLibrary()
+	})
+	
 </script>
 
 <style lang="scss" scoped>
