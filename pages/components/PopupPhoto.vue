@@ -12,15 +12,15 @@
 						<div class="views-comment-icon">
 							<span>
 								<image :src="likes" alt="点赞" />
-								{{ props.popupData.likes.length }}
+								{{ props.popupData.likes?.length || 0 }}
 							</span>
 							<span>
 								<image :src="views" alt="浏览" />
-								{{ props.popupData.views.length }}
+								{{ props.popupData.views?.length || 0 }}
 							</span>
 							<span>
 								<image :src="comments" alt="评论" />
-								{{ props.popupData.comments.length }}
+								{{ props.popupData.comments?.length || 0 }}
 							</span>
 						</div>
 					</view>
@@ -28,7 +28,7 @@
 						{{ props.popupData.content }}
 					</div>
 					<view class="image-content">
-						<img v-for="(item, idx) in props.popupData.photos" :key="idx" :src="item"></img>
+						<img v-for="(item, idx) in props.popupData.photos" :key="idx" :src="baseURL + item"></img>
 					</view>
 					
 				</scroll-view>
@@ -46,9 +46,10 @@
 	import {
 		_formatTime
 	} from '@/utils/publickFun.js';
-const likes = '/uploads/weixin/likes.svg'
-	const views = '/uploads/weixin/views.svg'
-	const comments = '/uploads/weixin/comment.svg'
+	const baseURL = 'https://m.mixblog.cn'
+const likes = 'https://m.mixblog.cn/uploads/weixin/likes.svg'
+	const views = 'https://m.mixblog.cn/uploads/weixin/views.svg'
+	const comments = 'https://m.mixblog.cn/uploads/weixin/comment.svg'
 	const emit = defineEmits(['update:showModel'])
 	// 获取popup实例
 	const popup = ref(null)
@@ -75,7 +76,7 @@ const likes = '/uploads/weixin/likes.svg'
 	})
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 	.popup-content {
 		background-color: #fff;
 		border-radius: 16rpx 16rpx 0 0;

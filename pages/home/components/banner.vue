@@ -11,7 +11,7 @@
         <swiper-item v-for="(item, index) in bannerData" :key="index">
           <view class="swiper-item">
             <image
-              :src="item.cover"
+              :src="baseURL + item.cover"
               class="slogan-image"
               alt="slogan Logo"
             ></image>
@@ -36,7 +36,7 @@ import { ref, onMounted } from "vue";
 import {
 		getAllBanners
 	} from '@/http/banner';
-
+const baseURL = 'https://m.mixblog.cn'
 const current = ref(0);
 const swiperDotIndex = ref(0);
 const bannerData = ref([])

@@ -1,0 +1,24 @@
+/* 水平间距 */
+/* 水平间距 */
+.home-data-container.data-v-e0c070db {
+  margin-top: 20px;
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  margin: 20px 10px;
+}
+.home-data-container .total-count.data-v-e0c070db, .home-data-container .today-count.data-v-e0c070db {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: linear-gradient(121deg, rgba(186, 255, 16, 0.1) 0%, rgba(255, 37, 243, 0.09) 100%);
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 0px 3px 1px;
+}
+.home-data-container .total-count span.data-v-e0c070db, .home-data-container .today-count span.data-v-e0c070db {
+  display: block;
+  font-size: 2rem;
+}

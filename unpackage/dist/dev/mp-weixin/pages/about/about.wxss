@@ -1,0 +1,36 @@
+/* 水平间距 */
+/* 水平间距 */
+.about-main-box.data-v-13a78ac6 {
+  padding: 20px 10px;
+}
+.about-main-box .about-content-box.data-v-13a78ac6 {
+  display: flex;
+  flex-direction: column;
+}
+.about-main-box .about-content-item.data-v-13a78ac6 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+}
+.about-main-box .about-content-item h3.data-v-13a78ac6 {
+  font-size: 18px;
+  font-weight: 600;
+}
+.about-main-box .about-content-item p.data-v-13a78ac6 {
+  font-size: 14px;
+}
+.about-main-box .about-content-item .about-images-content.data-v-13a78ac6 {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.about-main-box .about-content-item .about-images-content image.data-v-13a78ac6 {
+  width: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: #ccc;
+}

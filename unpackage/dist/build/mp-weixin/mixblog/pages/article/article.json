@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "文章",
+  "usingComponents": {
+    "article-card": "../components/ArticleCard",
+    "classify-meun": "../components/ClassifyMeun"
+  }
+}

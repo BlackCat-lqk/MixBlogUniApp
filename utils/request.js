@@ -1,6 +1,6 @@
 // 基础配置
 const config = {
-  baseURL: '/api', // 基础URL
+  baseURL: 'https://m.mixblog.cn/api', // 基础URL
   timeout: 60000, // 超时时间(毫秒)
   header: {
     'Content-Type': 'application/json' // 默认请求头

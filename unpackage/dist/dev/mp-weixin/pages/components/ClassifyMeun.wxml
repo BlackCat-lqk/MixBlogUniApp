@@ -1,0 +1,1 @@
+<view class="classify-box data-v-338ddbfa"><view class="classify-item-box data-v-338ddbfa"><view class="classify-item-box-bg data-v-338ddbfa"><view wx:for="{{a}}" wx:for-item="item" wx:key="d" class="{{['data-v-338ddbfa', item.c]}}" bindtap="{{item.e}}"><label class="data-v-338ddbfa">{{item.a}}{{item.b}}</label></view></view></view></view>

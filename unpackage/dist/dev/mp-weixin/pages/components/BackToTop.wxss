@@ -1,0 +1,28 @@
+
+.back-to-top.data-v-8e4d717f {
+  position: fixed;
+  right: 30rpx;
+  bottom: 30rpx;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+.back-to-top.show.data-v-8e4d717f {
+  opacity: 1;
+  transform: translateY(0);
+}
+.default-icon.data-v-8e4d717f {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}

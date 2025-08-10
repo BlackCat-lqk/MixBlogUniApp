@@ -1,0 +1,19 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/login/login",
+    "pages/register/register",
+    "pages/article/article",
+    "pages/gallery/gallery",
+    "pages/notes/notes",
+    "pages/about/about"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "Mix Blog",
+    "navigationBarBackgroundColor": "#f4f2ec",
+    "backgroundColor": "#f4f2ec"
+  },
+  "permission": {},
+  "usingComponents": {}
+}

@@ -13,7 +13,7 @@
         <p>
           {{ item.content }}
         </p>
-        <image :src="item.cover" loading="lazy" alt="笔记内容图片" />
+        <image :src="baseURL + item.cover" loading="lazy" alt="笔记内容图片" />
       </div>
     </uni-card>
   </div>
@@ -37,15 +37,16 @@ const props = defineProps({
   },
 })
 console.log(props.notesDetail)
+const baseURL = 'https://m.mixblog.cn'
 const weatherIconsURLs = {
-  cloudy: '/uploads/weixin/Weather/cloudy.svg',
-  overcast: '/uploads/weixin/Weather/overcast.svg',
-  pour: '/uploads/weixin/Weather/pour.svg',
-  rain: '/uploads/weixin/Weather/rain.svg',
-  snow: '/uploads/weixin/Weather/snow.svg',
-  sun: '/uploads/weixin/Weather/sun.svg',
-  thunderstorm: '/uploads/weixin/Weather/thunderstorm.svg',
-  wind: '/uploads/weixin/Weather/wind.svg'
+  cloudy: 'https://m.mixblog.cn/uploads/weixin/Weather/cloudy.svg',
+  overcast: 'https://m.mixblog.cn/uploads/weixin/Weather/overcast.svg',
+  pour: 'https://m.mixblog.cn/uploads/weixin/Weather/pour.svg',
+  rain: 'https://m.mixblog.cn/uploads/weixin/Weather/rain.svg',
+  snow: 'https://m.mixblog.cn/uploads/weixin/Weather/snow.svg',
+  sun: 'https://m.mixblog.cn/uploads/weixin/Weather/sun.svg',
+  thunderstorm: 'https://m.mixblog.cn/uploads/weixin/Weather/thunderstorm.svg',
+  wind: 'https://m.mixblog.cn/uploads/weixin/Weather/wind.svg'
 }
 
 const hasNote = ref(true)
@@ -75,6 +76,14 @@ const hasNote = ref(true)
 				justify-content: center;
 				align-items: center;
 				.weather-image{
+					width: 16px;
+					height: 16px;
+				}
+				img{
+					width: 16px;
+					height: 16px;
+				}
+				image{
 					width: 16px;
 					height: 16px;
 				}

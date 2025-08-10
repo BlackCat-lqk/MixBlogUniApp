@@ -1,0 +1,16 @@
+/* 水平间距 */
+/* 水平间距 */
+.article-title.data-v-cc7fb8d7 {
+  font-size: 1rem;
+  font-weight: 600;
+  padding-left: 15px;
+}
+.more-button.data-v-cc7fb8d7 {
+  margin-top: 20px;
+  width: 60px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}

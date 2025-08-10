@@ -1,0 +1,2 @@
+require('../../app.js');
+"use strict";const e=require("../../common/vendor.js"),a={__name:"login",setup(a){const s=e.ref({username:"",password:""}),o=()=>{console.log("登录信息:",s.value)};return(a,r)=>({a:s.value.username,b:e.o((e=>s.value.username=e.detail.value)),c:s.value.password,d:e.o((e=>s.value.password=e.detail.value)),e:e.o(o)})}},s=e._export_sfc(a,[["__scopeId","data-v-f444e42a"]]);wx.createPage(s);

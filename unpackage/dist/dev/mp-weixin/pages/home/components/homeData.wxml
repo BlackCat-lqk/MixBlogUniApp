@@ -1,0 +1,1 @@
+<view class="home-data-container data-v-e0c070db"><view class="total-count data-v-e0c070db"><label class="data-v-e0c070db">{{a}}</label><text class="data-v-e0c070db">总访问</text></view><view class="today-count data-v-e0c070db"><label class="data-v-e0c070db">{{b}}</label><text class="data-v-e0c070db">今日访问</text></view></view>

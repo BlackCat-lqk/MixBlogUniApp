@@ -2,7 +2,7 @@
   <div class="photo-gallery-box" @click="photoClick">
     <div
       class="photo-gallery-centent"
-			:style="{ backgroundImage: 'url(' + props.photosData.photos[0] + ')' }"
+			:style="{ backgroundImage: 'url(' + baseURL + props.photosData.photos[0] + ')' }"
     >
       <div class="photo-gallery-bg">{{ props.photosData.photos.length }}</div>
       <div class="photo-gallery-desc">
@@ -40,9 +40,10 @@
 import { reactive, ref } from 'vue'
 import { _formatTime } from '@/utils/publickFun';
 import PopupContent from '@/pages/components/PopupPhoto.vue'
-const likes = '/uploads/weixin/likes.svg'
-	const views = '/uploads/weixin/views.svg'
-	const comments = '/uploads/weixin/comment.svg'
+const likes = 'https://m.mixblog.cn/uploads/weixin/likes.svg'
+	const views = 'https://m.mixblog.cn/uploads/weixin/views.svg'
+	const comments = 'https://m.mixblog.cn/uploads/weixin/comment.svg'
+	const baseURL = 'https://m.mixblog.cn'
 const props = defineProps({
 	photosData: {
     type: Object,

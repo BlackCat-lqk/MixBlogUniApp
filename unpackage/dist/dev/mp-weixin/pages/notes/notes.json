@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "随记",
+  "usingComponents": {
+    "uni-calendar": "../../uni_modules/uni-calendar/components/uni-calendar/uni-calendar",
+    "notes-card": "../components/NotesCard"
+  }
+}

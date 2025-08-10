@@ -3,7 +3,7 @@
 		<div class="article-card-box" v-for="(item, idx) in props.articleData.data" :key="idx" @click="articleClick(item)">
 			<div class="article-card-header">
 				<div class="article-card-header-img">
-					<image :src="item.cover" alt="文章封面" loading="lazy" />
+					<image :src="baseURL + item.cover" alt="文章封面" loading="lazy" />
 				</div>
 				<div class="article-card-header-title">
 					<p class="p-h3">{{ item.title }}</p>
@@ -52,9 +52,10 @@
 		reactive
 	} from 'vue';
 	import PopupContent from '@/pages/components/PopupContent.vue'
-	const likes = '/uploads/weixin/likes.svg'
-	const views = '/uploads/weixin/views.svg'
-	const comments = '/uploads/weixin/comment.svg'
+	const likes = 'https://m.mixblog.cn/uploads/weixin/likes.svg'
+	const views = 'https://m.mixblog.cn/uploads/weixin/views.svg'
+	const comments = 'https://m.mixblog.cn/uploads/weixin/comment.svg'
+	const baseURL = 'https://m.mixblog.cn'
 	let articleDetail = reactive({
 		_id: '',
 		title: '',

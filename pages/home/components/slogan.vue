@@ -1,6 +1,6 @@
 <template>
 	<view class="slogan-main-box">
-		<image class="slogan-logo" :src="formValue.cover" alt="slogan Logo">
+		<image class="slogan-logo" :src="'https://m.mixblog.cn' + formValue.cover" alt="slogan Logo">
 		</image>
 		<view class="slogan-text-box">
 			<text style="font-size: 24px;">{{ formValue.sloganTitle }}</text>
@@ -8,12 +8,12 @@
 			<text>{{ formValue.sloganSub2 }}</text>
 		</view>
 		<view class="slogan-container">
-			<uni-link href="https://github.com/BlackCat-lqk/MixBlog">
+			<!-- <uni-link href="https://github.com/BlackCat-lqk/MixBlog"> -->
 				<image :src="img1" class="slogan-image" alt="slogan Logo"></image>
-			</uni-link>
-			<uni-link href="https://space.bilibili.com/154164424?spm_id_from=333.1007.0.0">
+			<!-- </uni-link> -->
+			<!-- <uni-link href="https://space.bilibili.com/154164424?spm_id_from=333.1007.0.0"> -->
 				<image :src="img2" class="slogan-image" alt="slogan Logo"></image>
-			</uni-link>
+			<!-- </uni-link> -->
 
 			<button class="button" type="primary" @click="isNoDev">MIX AI</button>
 		</view>
@@ -32,8 +32,9 @@
 	import {
 		useSloganInfoStore
 	} from '@/stores/slogan'
-	const img1 = '/uploads/weixin/Github.svg'
-	const img2 = '/uploads/weixin/Blibli.svg'
+	const baseURL = 'https://m.mixblog.cn'
+	const img1 = 'https://m.mixblog.cn/uploads/weixin/Github.svg'
+	const img2 = 'https://m.mixblog.cn/uploads/weixin/Blibli.svg'
 	const sloganStore = useSloganInfoStore()
 	const formValue = reactive({
 		logoPicture: '',

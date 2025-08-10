@@ -19,14 +19,14 @@ import ArticleView from "@/pages/home/components/article.vue";
 import NotesView from "@/pages/home/components/notes.vue";
 import PhotoView from "@/pages/home/components/photo.vue";
 import { recordVisitApi, getVisitorIpApi } from '@/http/visit'
-import { getDeviceType } from '@/utils/deviceUtils'
+// import { getDeviceType } from '@/utils/deviceUtils'
 
 // 记录访问统计
 const recordVisit = async () => {
-	const userAgent = getDeviceType()
+	// const userAgent = getDeviceType()
   const res = await getVisitorIpApi()
   const params = {
-    userAgent,
+    userAgent: 'iPhone',
     ipAddress: res.data.ip,
     ...res.data,
   }

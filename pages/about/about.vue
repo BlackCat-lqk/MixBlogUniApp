@@ -3,7 +3,7 @@
     <div class="about-content-box">
 			<view style="width: 80px; height: 80px; border-radius: 50%; overflow: hidden;">
 				<image
-			  :src="aboutData.cover"
+			  :src="baseURL + aboutData.cover"
 			  object-fit="cover"
 			  lazy="true"
 			  alt="about"
@@ -29,14 +29,14 @@
           </div>
           <div v-if="idx == 0" class="about-images-content">
             <image
-              src="/uploads/weixin/about2.jpg"
+              :src="about1"
               object-fit="cover"
               lazy="true"
 							mode="aspectFit"
               alt="about"
             />
             <image
-              src="/uploads/weixin/about3.jpg"
+              :src="about2"
               object-fit="cover"
 							mode="aspectFit"
               lazy="true"
@@ -52,7 +52,9 @@
 <script setup>
 import { reactive, onMounted  } from 'vue'
 import { getAboutConfigApi } from '@/http/about'
-
+const about1 = 'https://m.mixblog.cn/uploads/weixin/about2.jpg'
+const about2 = 'https://m.mixblog.cn/uploads/weixin/about3.jpg'
+const baseURL = 'https://m.mixblog.cn'
 const aboutData = reactive({
   intro: '',
   tags: '',

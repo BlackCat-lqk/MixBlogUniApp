@@ -1,1 +1,1 @@
-"use strict";Math||(e+o+s+n)();const e=()=>"../components/HeaderNav.js",o=()=>"../home/index.js",s=()=>"../components/Footer.js",n=()=>"../components/BackToTop.js",t={__name:"index",setup:e=>(e,o)=>({})};wx.createPage(t);
+"use strict";Math||(e+s+t)();const e=()=>"../components/HeaderNav.js",s=()=>"../home/index.js",t=()=>"../components/Footer.js",n={__name:"index",setup:e=>(e,s)=>({})};wx.createPage(n);

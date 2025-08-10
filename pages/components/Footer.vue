@@ -7,9 +7,9 @@
 						<uni-grid :column="4" :highlight="true">
 							<uni-grid-item v-for="(item, index) in supportData.slice(0, 4)" :index="index" :key="index">
 								<view class="grid-item-box">
-									<uni-link :href="item.url" target="_blank">
+									<!-- <uni-link :href="item.url" target="_blank"> -->
 										<image :src="item.img" class="footer-image" :alt="item.alt" />
-									</uni-link>
+									<!-- </uni-link> -->
 								</view>
 							</uni-grid-item>
 						</uni-grid>
@@ -18,9 +18,9 @@
 						<uni-grid :column="4" :highlight="true">
 							<uni-grid-item v-for="(item, index) in supportData.slice(4, 8)" :index="index" :key="index">
 								<view class="grid-item-box">
-									<uni-link :href="item.url" target="_blank">
+									<!-- <uni-link :href="item.url" target="_blank"> -->
 										<image :src="item.img" class="footer-image" :alt="item.alt" />
-									</uni-link>
+									<!-- </uni-link> -->
 								</view>
 							</uni-grid-item>
 						</uni-grid>
@@ -29,9 +29,9 @@
 						<uni-grid :column="4" :highlight="true">
 							<uni-grid-item v-for="(item, index) in supportData.slice(8, 12)" :index="index" :key="index">
 								<view class="grid-item-box">
-									<uni-link :href="item.url" target="_blank">
+									<!-- <uni-link :href="item.url" target="_blank"> -->
 										<image :src="item.img" class="footer-image" :alt="item.alt" />
-									</uni-link>
+									<!-- </uni-link> -->
 								</view>
 							</uni-grid-item>
 						</uni-grid>
@@ -40,9 +40,9 @@
 						<uni-grid :column="4" :highlight="true">
 							<uni-grid-item v-for="(item, index) in supportData.slice(12, 16)" :index="index" :key="index">
 								<view class="grid-item-box">
-									<uni-link :href="item.url" target="_blank">
+									<!-- <uni-link :href="item.url" target="_blank"> -->
 										<image :src="item.img" class="footer-image" :alt="item.alt" />
-									</uni-link>
+									<!-- </uni-link> -->
 								</view>
 							</uni-grid-item>
 						</uni-grid>
@@ -51,9 +51,9 @@
 						<uni-grid :column="4" :highlight="true">
 							<uni-grid-item v-for="(item, index) in supportData.slice(16, 20)" :index="index" :key="index">
 								<view class="grid-item-box">
-									<uni-link :href="item.url" target="_blank">
+									<!-- <uni-link :href="item.url" target="_blank"> -->
 										<image :src="item.img" class="footer-image" :alt="item.alt" />
-									</uni-link>
+									<!-- </uni-link> -->
 								</view>
 							</uni-grid-item>
 						</uni-grid>
@@ -70,102 +70,102 @@
 
 <script setup>
 	const supportData = [{
-			img: '/uploads/weixin/footer/vue3.svg',
+			img: 'https://m.mixblog.cn/uploads/weixin/footer/vue3.svg',
 			url: 'https://v3.cn.vuejs.org/',
 			alt: 'vue3',
 		},
 		{
-			img: '/uploads/weixin/footer/typescript.svg',
+			img: 'https://m.mixblog.cn/uploads/weixin/footer/typescript.svg',
 			url: 'https://www.typescriptlang.org/',
 			alt: 'typescript',
 		},
 		{
-			img: '/uploads/weixin/footer/vite.svg',
+			img: 'https://m.mixblog.cn/uploads/weixin/footer/vite.svg',
 			url: 'https://cn.vitejs.dev/',
 			alt: 'vitejs',
 		},	
 		{
-			img: '/uploads/weixin/footer/Echarts.svg',
+			img: 'https://m.mixblog.cn/uploads/weixin/footer/Echarts.svg',
 			url: 'https://echarts.apache.org/index.html',
 			alt: 'echarts',
 		},
 		{
-			img: '/uploads/weixin/footer/vant.svg',
+			img: 'https://m.mixblog.cn/uploads/weixin/footer/vant.svg',
 			url: 'https://vant-ui.github.io/vant/',
 			alt: 'vant',
 		},
 		{
-			img: '/uploads/weixin/footer/JavaScript.svg',
+			img: 'https://m.mixblog.cn/uploads/weixin/footer/JavaScript.svg',
 			url: 'https://www.javascript.com/',
 			alt: 'javascript',
 		},
 		{
-			img: '/uploads/weixin/footer/Github.svg',
+			img: 'https://m.mixblog.cn/uploads/weixin/footer/Github.svg',
 			url: 'https://github.com/',
 			alt: 'github',
 		},
 		{
-			img: '/uploads/weixin/footer/naive.svg',
+			img: 'https://m.mixblog.cn/uploads/weixin/footer/naive.svg',
 			url: 'https://www.naiveui.com/',
 			alt: 'naive ui',
 		},
 		{
-			img: '/uploads/weixin/footer/pinia.svg',
+			img: 'https://m.mixblog.cn/uploads/weixin/footer/pinia.svg',
 			url: 'https://pinia.vuejs.org/',
 			alt: 'pinia',
 		},
 		{
-			img: '/uploads/weixin/footer/Nodejs.svg',
+			img: 'https://m.mixblog.cn/uploads/weixin/footer/Nodejs.svg',
 			url: 'https://nodejs.org/',
 			alt: 'nodejs',
 		},
 		{
-			img: '/uploads/weixin/footer/express.svg',
+			img: 'https://m.mixblog.cn/uploads/weixin/footer/express.svg',
 			url: 'https://expressjs.com/',
 			alt: 'express',
 		},
 		{
-			img: '/uploads/weixin/footer/scss.svg',
+			img: 'https://m.mixblog.cn/uploads/weixin/footer/scss.svg',
 			url: 'https://sass-lang.com/',
 			alt: 'scss',
 		},
 		{
-			img: '/uploads/weixin/footer/deepseek.svg',
+			img: 'https://m.mixblog.cn/uploads/weixin/footer/deepseek.svg',
 			url: 'https://www.deepseek.com/',
 			alt: 'deepseek',
 		},
 		{
-			img: '/uploads/weixin/footer/mongodb.svg',
+			img: 'https://m.mixblog.cn/uploads/weixin/footer/mongodb.svg',
 			url: 'https://www.mongodb.com/',
 			alt: 'mongodb',
 		},
 		{
-			img: '/uploads/weixin/footer/esLint.svg',
+			img: 'https://m.mixblog.cn/uploads/weixin/footer/esLint.svg',
 			url: 'https://eslint.org/',
 			alt: 'eslint',
 		},
 		{
-			img: '/uploads/weixin/footer/unocss.svg',
+			img: 'https://m.mixblog.cn/uploads/weixin/footer/unocss.svg',
 			url: 'https://unocss.dev/',
 			alt: 'unocss',
 		},
 		{
-			img: '/uploads/weixin/footer/vuebits.svg',
+			img: 'https://m.mixblog.cn/uploads/weixin/footer/vuebits.svg',
 			url: 'https://vue-bits.dev/',
 			alt: 'vuebits',
 		},
 		{
-			img: '/uploads/weixin/footer/quill.svg',
+			img: 'https://m.mixblog.cn/uploads/weixin/footer/quill.svg',
 			url: 'https://quilljs.com/',
 			alt: 'quill',
 		},
 		{
-			img: '/uploads/weixin/footer/oxlint.svg',
+			img: 'https://m.mixblog.cn/uploads/weixin/footer/oxlint.svg',
 			url: 'https://oxc.rs/docs/guide/usage/linter/config.html',
 			alt: 'oxlint',
 		},
 		{
-			img: '/uploads/weixin/footer/bt.svg',
+			img: 'https://m.mixblog.cn/uploads/weixin/footer/bt.svg',
 			url: 'https://www.bt.cn/new/index.html',
 			alt: 'BT.CN',
 		},

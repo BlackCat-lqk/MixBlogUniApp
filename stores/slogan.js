@@ -8,7 +8,7 @@ export const useSloganInfoStore = defineStore('sloganConfigInfo', {
       sloganTitle: '',
       sloganSub1: '',
       sloganSub2: '',
-      cover: '/uploads/defalut/logo2024.webp',
+      cover: 'https://m.mixblog.cn/uploads/defalut/logo2024.webp',
     },
   }),
   actions: {
@@ -16,5 +16,8 @@ export const useSloganInfoStore = defineStore('sloganConfigInfo', {
       this.sloganConfig = val
     },
   },
-  persist: true,
+  // persist: true,
+	// #ifdef H5
+	  persist: true,
+	  // #endif
 })

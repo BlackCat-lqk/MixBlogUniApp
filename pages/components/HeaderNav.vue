@@ -2,7 +2,7 @@
 	<view class="container">
 		<view class="navbar">
 			<view class="nav-left">
-				<image class="logo" src="/static/logo-transparent.webp" mode="aspectFit"></image>
+				<image class="logo" src="https://m.mixblog.cn/uploads/defalut/logo-transparent.webp" mode="aspectFit"></image>
 			</view>
 			<view class="nav-center">
 				<text class="nav-item" @click="gotoOhter('/pages/index/index')">首页</text>
@@ -13,7 +13,7 @@
 			</view>
 			<view class="nav-right">
 				<view class="customicons more-icon">
-					<image class="logo" @click="openMenu" src="/static/moreiconfont.svg"></image>
+					<image class="logo" @click="openMenu" src="https://m.mixblog.cn/uploads/weixin/moreiconfont.svg"></image>
 				</view>
 			</view>
 		</view>
@@ -29,7 +29,6 @@
 	import { ref } from 'vue'
 	
 	const popup = ref(null)
-	
 	const openMenu = () => {
 		popup.value.open()
 	}

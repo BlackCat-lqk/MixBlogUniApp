@@ -1,0 +1,1 @@
+<view class="{{['back-to-top', 'data-v-8e4d717f', b && 'show']}}" bindtap="{{c}}"><block wx:if="{{$slots.d}}"><slot></slot></block><block wx:else><view class="default-icon data-v-8e4d717f"><uni-icons wx:if="{{a}}" class="data-v-8e4d717f" u-i="8e4d717f-0" bind:__l="__l" u-p="{{a}}"></uni-icons></view></block></view>
