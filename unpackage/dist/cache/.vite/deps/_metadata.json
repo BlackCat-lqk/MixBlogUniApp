@@ -1,15 +1,61 @@
 {
-  "hash": "a7a7afea",
-  "configHash": "75d1f329",
-  "lockfileHash": "3f21727e",
-  "browserHash": "48d9cb1b",
+  "hash": "883e7320",
+  "configHash": "eb73f73c",
+  "lockfileHash": "8a63e349",
+  "browserHash": "d9e75c73",
   "optimized": {
     "pinia-plugin-persistedstate": {
       "src": "../../../../../node_modules/pinia-plugin-persistedstate/dist/index.js",
       "file": "pinia-plugin-persistedstate.js",
-      "fileHash": "5b557a96",
+      "fileHash": "4b3c40e7",
+      "needsInterop": false
+    },
+    "lodash": {
+      "src": "../../../../../node_modules/lodash/lodash.js",
+      "file": "lodash.js",
+      "fileHash": "0fba9bb7",
+      "needsInterop": true
+    },
+    "@vueup/vue-quill": {
+      "src": "../../../../../node_modules/@vueup/vue-quill/dist/vue-quill.esm-bundler.js",
+      "file": "@vueup_vue-quill.js",
+      "fileHash": "c6b345ae",
+      "needsInterop": false
+    },
+    "highlight.js": {
+      "src": "../../../../../node_modules/highlight.js/es/index.js",
+      "file": "highlight__js.js",
+      "fileHash": "a732c504",
+      "needsInterop": false
+    },
+    "quill/modules/syntax": {
+      "src": "../../../../../node_modules/quill/modules/syntax.js",
+      "file": "quill_modules_syntax.js",
+      "fileHash": "18048704",
+      "needsInterop": false
+    },
+    "quill": {
+      "src": "../../../../../node_modules/quill/quill.js",
+      "file": "quill.js",
+      "fileHash": "9444c9bf",
+      "needsInterop": false
+    },
+    "axios": {
+      "src": "../../../../../node_modules/axios/index.js",
+      "file": "axios.js",
+      "fileHash": "ae68c261",
       "needsInterop": false
     }
   },
-  "chunks": {}
+  "chunks": {
+    "chunk-PVQ7SAZW": {
+      "file": "chunk-PVQ7SAZW.js"
+    },
+    "chunk-P76UNY3Y": {
+      "file": "chunk-P76UNY3Y.js"
+    },
+    "chunk-UV5CTPV7": {
+      "file": "chunk-UV5CTPV7.js"
+    }
+  }
 }

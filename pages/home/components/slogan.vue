@@ -8,11 +8,14 @@
 			<text>{{ formValue.sloganSub2 }}</text>
 		</view>
 		<view class="slogan-container">
-			<image @click="openExternal('https://github.com/BlackCat-lqk/MixBlog')" src="@/static/Github.svg"
-				class="slogan-image" alt="slogan Logo"></image>
-			<image @click="openExternal('https://space.bilibili.com/154164424?spm_id_from=333.1007.0.0')"
-				src="@/static/Blibli.svg" class="slogan-image" alt="slogan Logo"></image>
-			<button class="button" type="primary">MIX AI</button>
+			<uni-link href="https://github.com/BlackCat-lqk/MixBlog">
+				<image :src="img1" class="slogan-image" alt="slogan Logo"></image>
+			</uni-link>
+			<uni-link href="https://space.bilibili.com/154164424?spm_id_from=333.1007.0.0">
+				<image :src="img2" class="slogan-image" alt="slogan Logo"></image>
+			</uni-link>
+
+			<button class="button" type="primary" @click="isNoDev">MIX AI</button>
 		</view>
 	</view>
 </template>
@@ -26,12 +29,12 @@
 	import {
 		getSloganApi
 	} from '@/http/slogan';
-	import { useSloganInfoStore } from '@/stores/slogan'
-
-const sloganStore = useSloganInfoStore()
-	const openExternal = (val) => {
-		window.location.href = val;
-	}
+	import {
+		useSloganInfoStore
+	} from '@/stores/slogan'
+	const img1 = '/uploads/weixin/Github.svg'
+	const img2 = '/uploads/weixin/Blibli.svg'
+	const sloganStore = useSloganInfoStore()
 	const formValue = reactive({
 		logoPicture: '',
 		logoName: '',
@@ -40,6 +43,12 @@ const sloganStore = useSloganInfoStore()
 		sloganSub2: '',
 		cover: '',
 	})
+	const isNoDev = () => {
+		uni.showToast({
+			title: '该功能移动端暂未上线，请使用客户端打开！',
+			icon: 'none',
+		});
+	}
 	// 获取slogan数据
 	const getSloganConfig = async () => {
 		const response = await getSloganApi({})
@@ -74,6 +83,7 @@ const sloganStore = useSloganInfoStore()
 		margin: 10px 10px 0 10px;
 		border-radius: 4px;
 		box-shadow: rgba(0, 0, 0, 0.08) 0px 0px 3px 1px;
+
 		.slogan-logo {
 			width: 70%;
 			height: 100%;
@@ -88,13 +98,20 @@ const sloganStore = useSloganInfoStore()
 		.slogan-text-box {
 			position: absolute;
 			left: 70%;
-			top: 50%;
+			top: 45%;
 			transform: translate(-50%, -50%);
 			display: flex;
 			flex-direction: column;
 			line-height: 1.54;
 			font-size: 24px;
 			font-weight: 600;
+			color: #003b59;
+			/* 后备颜色 */
+			background: linear-gradient(to right, #003b59, #3e005d);
+			-webkit-background-clip: text;
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
+			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 		}
 
 		.slogan-container {
@@ -106,10 +123,11 @@ const sloganStore = useSloganInfoStore()
 			align-items: center;
 			justify-content: center;
 			gap: 12px;
+			height: 32px;
 
 			.slogan-image {
-				width: 24px;
-				height: 24px;
+				width: 32px;
+				height: 32px;
 			}
 
 			.button {

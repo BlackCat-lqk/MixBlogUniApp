@@ -1,7 +1,8 @@
 <template>
-  <div class="photo-gallery-box">
+  <div class="photo-gallery-box" @click="photoClick">
     <div
       class="photo-gallery-centent"
+			:style="{ backgroundImage: 'url(' + props.photosData.photos[0] + ')' }"
     >
       <div class="photo-gallery-bg">{{ props.photosData.photos.length }}</div>
       <div class="photo-gallery-desc">
@@ -11,15 +12,15 @@
             <p>{{ _formatTime(props.photosData.updatedAt).date }}</p>
             <div class="views-comment-icon">
               <span>
-                <image src="@/static/likes.svg" alt="likes" />
+                <image :src="likes" alt="likes" />
                 {{ props.photosData.likes.length }}
               </span>
               <span>
-                <image src="@/static/views.svg" alt="views" />
+                <image :src="views" alt="views" />
                 {{ props.photosData.views.length }}
               </span>
               <span>
-                <image src="@/static/comment.svg" alt="comment" />
+                <image :src="comments" alt="comment" />
                 {{ props.photosData.comments.length }}
               </span>
             </div>
@@ -30,18 +31,33 @@
         </div>
       </div>
     </div>
+		<PopupContent ref="popup" :popupData="photoDetail" :count="countPopup">
+		</PopupContent>
   </div>
 </template>
 
 <script setup>
+import { reactive, ref } from 'vue'
 import { _formatTime } from '@/utils/publickFun';
-
+import PopupContent from '@/pages/components/PopupPhoto.vue'
+const likes = '/uploads/weixin/likes.svg'
+	const views = '/uploads/weixin/views.svg'
+	const comments = '/uploads/weixin/comment.svg'
 const props = defineProps({
 	photosData: {
     type: Object,
     default: () => {},
   },
 })
+	let photoDetail = reactive([])
+const popup = ref(null)
+	
+	const countPopup = ref(0)
+	const photoClick = () => {
+		photoDetail = props.photosData
+		countPopup.value++
+		popup.value.open()
+	}
 </script>
 
 <style scoped lang="scss">
@@ -55,11 +71,10 @@ const props = defineProps({
     overflow: hidden;
     border-radius: 8px;
     position: relative;
-    background-size: contain;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
-		background-image:url('@/static/logo-transparent.webp');
 		border: 1px solid #ccc;
     .photo-gallery-bg {
       position: absolute;
@@ -70,10 +85,11 @@ const props = defineProps({
       width: 32px;
 			border-radius: 5px;
       backdrop-filter: blur(1px);
-			background-color: #0000003d;
+			background-color: #f3f3f33d;
 			display: flex;
 			justify-content: center;
 			align-items: center;
+			color: #fff;
     }
     .photo-gallery-desc {
       position: absolute;
@@ -87,15 +103,10 @@ const props = defineProps({
         justify-content: space-between;
         flex-direction: column;
         .p-h1 {
-          color: #000;
-          font-size: 14px;
+          color: #fff;
+          font-size: 16px;
           font-weight: 600;
           margin: 4px 0px;
-        }
-        p {
-          color: #000;
-          font-size: 12px;;
-          text-align: justify;
         }
         .photo-gallery-title-data {
           display: flex;
@@ -116,20 +127,30 @@ const props = defineProps({
           }
           p {
             font-size: 12px;
-            color: #000;
+            color: #e5e5e5;
           }
           span {
             font-size: 12px;
-            color: #000;
+            color: #fff;
             margin-left: 8px;
           }
         }
       }
       .photo-gallery-desc-p {
-        color: #000;
+        color: #fff;
         padding-top: 10px;
         font-size: 14px;
+				line-height: 1.54;
         text-align: justify;
+				overflow: hidden;
+				display: -webkit-box;
+				-webkit-box-orient: vertical;
+				-webkit-line-clamp: 4;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				/* 小程序可能需要 */
+				word-wrap: break-word;
+				word-break: break-all;
       }
     }
 	}

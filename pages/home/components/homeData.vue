@@ -47,7 +47,7 @@ onMounted(() => {
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        background-color: #fff;
+        background: linear-gradient(121deg, rgba(186, 255, 16, .1) 0%, rgba(255, 37, 243, .09) 100%);
         padding: 10px;
         border-radius: 4px;
 				box-shadow: rgba(0, 0, 0, 0.08) 0px 0px 3px 1px;

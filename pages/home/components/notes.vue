@@ -2,7 +2,7 @@
   <view class="article-box">
   	<view class="article-title">随笔随记</view>
   	<notes-card :notesDetail="notesDetail"></notes-card>
-  	<button class="more-button" type="primary">更多</button>
+  	<button class="more-button" type="primary" @click="gotoOhter">更多</button>
   </view>
 </template>
 
@@ -19,12 +19,21 @@
 	  weather: '',
 	  cover: '',
 	})
-	
+	const gotoOhter = (val) => {
+		uni.navigateTo({
+			url: '/pages/notes/notes'
+		})
+	}
 	const getNotesData = async () => {
 		const result = await getNotesApi({})
 		const res = result.data
 		if(res.code == 200){
-			notesDetail.value = res.data.list
+			if(res.data.length <= 2){
+				notesDetail.value = res.data
+			}else {
+				notesDetail.value = res.data.slice(0, 2)
+			}
+			
 		}else {
 			uni.showToast({
 			       title: '网络错误',

@@ -5,7 +5,7 @@
 			<image-library :photosData="item"></image-library>
 		</view>
   	
-  	<button class="more-button" type="primary">更多</button>
+  	<button class="more-button" type="primary" @click="gotoOhter">更多</button>
   </view>
 </template>
 
@@ -14,15 +14,22 @@
 	import ImageLibrary from '@/pages/components/ImageLibrary.vue';
 	import { getPhotoLibraryApi } from '@/http/photoLibrary';
 	
-	const photosData = reactive([])
-	
+	const photosData = ref([])
+	const gotoOhter = (val) => {
+		uni.navigateTo({
+			url: '/pages/gallery/gallery'
+		})
+	}
+	// 获取图库数据
 	const getPhotoLibrary = async () => {
 		const result = await getPhotoLibraryApi({})
 		const res = result.data
 		if(res.code == 200){
-			photosData.value = res.data.list
-			console.log(photosData.value)
-			
+			if(res.data.list.length <= 3){
+				photosData.value = res.data.list
+			}else {
+					photosData.value = res.data.list.slice(0,3)
+			}
 		}else {
 			uni.showToast({
 			       title: '网络错误',

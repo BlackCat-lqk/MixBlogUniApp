@@ -5,11 +5,11 @@
 				<image class="logo" src="/static/logo-transparent.webp" mode="aspectFit"></image>
 			</view>
 			<view class="nav-center">
-				<text class="nav-item">首页</text>
-				<text class="nav-item">文章</text>
-				<text class="nav-item">图库</text>
-				<text class="nav-item">随记</text>
-				<text class="nav-item">关于</text>
+				<text class="nav-item" @click="gotoOhter('/pages/index/index')">首页</text>
+				<text class="nav-item" @click="gotoOhter('/pages/article/article')">文章</text>
+				<text class="nav-item" @click="gotoOhter('/pages/gallery/gallery')">图库</text>
+				<text class="nav-item" @click="gotoOhter('/pages/notes/notes')">随记</text>
+				<text class="nav-item" @click="gotoOhter('/pages/about/about')">关于</text>
 			</view>
 			<view class="nav-right">
 				<view class="customicons more-icon">
@@ -19,7 +19,7 @@
 		</view>
 		<uni-popup ref="popup" type="top" :mask-click="true">
 			<view class="popup-menu">
-				<view class="menu-item" @click="goToLogin">去登录</view>
+				<view class="menu-item" @click="gotoOhter('/pages/login/login')">去登录</view>
 			</view>
 		</uni-popup>
 	</view>
@@ -34,10 +34,10 @@
 		popup.value.open()
 	}
 	
-	const goToLogin = () => {
+	const gotoOhter = (val) => {
 		popup.value.close()
 		uni.navigateTo({
-			url: '/pages/login/login'
+			url: val
 		})
 	}
 </script>

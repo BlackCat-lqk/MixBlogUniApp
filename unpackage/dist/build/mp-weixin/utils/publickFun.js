@@ -1,0 +1,1 @@
+"use strict";exports._formatTime=function(t){const e=new Date(t),r=e.getFullYear(),a=String(e.getMonth()+1).padStart(2,"0"),n=String(e.getDate()).padStart(2,"0");return{date:`${r}-${a}-${n}`,time:`${r}-${a}-${n} ${String(e.getHours()).padStart(2,"0")}:${String(e.getMinutes()).padStart(2,"0")}:${String(e.getSeconds()).padStart(2,"0")}`}};

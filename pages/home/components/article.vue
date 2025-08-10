@@ -2,7 +2,7 @@
 	<view class="article-box">
 		<view class="article-title">博客文章</view>
 		<article-card :articleData="articleData"></article-card>
-		<button class="more-button" type="primary">更多</button>
+		<button class="more-button" type="primary" @click="gotoOhter">更多</button>
 	</view>
 </template>
 
@@ -18,6 +18,11 @@
 		data: [],
 		columns: 2,
 	})
+	const gotoOhter = (val) => {
+		uni.navigateTo({
+			url: '/pages/article/article'
+		})
+	}
 	// 获取banner数据
 	const getArticleData = async () => {
 		const response = await getAllBlogArticleApi({})

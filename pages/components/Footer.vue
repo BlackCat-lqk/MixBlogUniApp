@@ -7,9 +7,9 @@
 						<uni-grid :column="4" :highlight="true">
 							<uni-grid-item v-for="(item, index) in supportData.slice(0, 4)" :index="index" :key="index">
 								<view class="grid-item-box">
-									<a :href="item.url" target="_blank">
+									<uni-link :href="item.url" target="_blank">
 										<image :src="item.img" class="footer-image" :alt="item.alt" />
-									</a>
+									</uni-link>
 								</view>
 							</uni-grid-item>
 						</uni-grid>
@@ -18,9 +18,9 @@
 						<uni-grid :column="4" :highlight="true">
 							<uni-grid-item v-for="(item, index) in supportData.slice(4, 8)" :index="index" :key="index">
 								<view class="grid-item-box">
-									<a :href="item.url" target="_blank">
+									<uni-link :href="item.url" target="_blank">
 										<image :src="item.img" class="footer-image" :alt="item.alt" />
-									</a>
+									</uni-link>
 								</view>
 							</uni-grid-item>
 						</uni-grid>
@@ -29,9 +29,9 @@
 						<uni-grid :column="4" :highlight="true">
 							<uni-grid-item v-for="(item, index) in supportData.slice(8, 12)" :index="index" :key="index">
 								<view class="grid-item-box">
-									<a :href="item.url" target="_blank">
+									<uni-link :href="item.url" target="_blank">
 										<image :src="item.img" class="footer-image" :alt="item.alt" />
-									</a>
+									</uni-link>
 								</view>
 							</uni-grid-item>
 						</uni-grid>
@@ -40,9 +40,9 @@
 						<uni-grid :column="4" :highlight="true">
 							<uni-grid-item v-for="(item, index) in supportData.slice(12, 16)" :index="index" :key="index">
 								<view class="grid-item-box">
-									<a :href="item.url" target="_blank">
+									<uni-link :href="item.url" target="_blank">
 										<image :src="item.img" class="footer-image" :alt="item.alt" />
-									</a>
+									</uni-link>
 								</view>
 							</uni-grid-item>
 						</uni-grid>
@@ -51,9 +51,9 @@
 						<uni-grid :column="4" :highlight="true">
 							<uni-grid-item v-for="(item, index) in supportData.slice(16, 20)" :index="index" :key="index">
 								<view class="grid-item-box">
-									<a :href="item.url" target="_blank">
+									<uni-link :href="item.url" target="_blank">
 										<image :src="item.img" class="footer-image" :alt="item.alt" />
-									</a>
+									</uni-link>
 								</view>
 							</uni-grid-item>
 						</uni-grid>
@@ -63,130 +63,109 @@
 		</view>
 		<view class="footer-info">
 			<text class="text-p1">Mix Blog 1.1.0 · Made by LQK</text>
-			<view></view>
-			<text class="text-p2">备案/许可证 &nbsp;<a href="https://beian.miit.gov.cn/#/Integrated/index">桂ICP备2025066402号</a></text>
+			<text class="text-p2">备案/许可证 &nbsp;<uni-link href="https://beian.miit.gov.cn/#/Integrated/index">桂ICP备2025066402号</uni-link></text>
 		</view>
 	</view>
 </template>
 
 <script setup>
-	import vue3Image from '@/static/footer/vue3.svg'
-	import typescriptImage from '@/static/footer/typescript.svg'
-	import viteImage from '@/static/footer/vite.svg'
-	import EchartsImage from '@/static/footer/Echarts.svg'
-	import vantImage from '@/static/footer/vant.svg'
-	import JavaScriptImage from '@/static/footer/JavaScript.svg'
-	import GithubImage from '@/static/footer/Github.svg'
-	import naiveImage from '@/static/footer/naive.svg'
-	import piniaImage from '@/static/footer/pinia.svg'
-	import NodejsImage from '@/static/footer/Nodejs.svg'
-	import expressImage from '@/static/footer/express.svg'
-	import scssImage from '@/static/footer/scss.svg'
-	import deepseekImage from '@/static/footer/deepseek.svg'
-	import mongodbImage from '@/static/footer/mongodb.svg'
-	import esLintImage from '@/static/footer/esLint.svg'
-	import unocssImage from '@/static/footer/unocss.svg'
-	import vuebitsImage from '@/static/footer/vuebits.svg'
-	import quillImage from '@/static/footer/quill.svg'
-	import oxlintImage from '@/static/footer/oxlint.svg'
-	import btImage from '@/static/footer/bt.svg'
 	const supportData = [{
-			img: vue3Image,
+			img: '/uploads/weixin/footer/vue3.svg',
 			url: 'https://v3.cn.vuejs.org/',
 			alt: 'vue3',
 		},
 		{
-			img: typescriptImage,
+			img: '/uploads/weixin/footer/typescript.svg',
 			url: 'https://www.typescriptlang.org/',
 			alt: 'typescript',
 		},
 		{
-			img: viteImage,
+			img: '/uploads/weixin/footer/vite.svg',
 			url: 'https://cn.vitejs.dev/',
 			alt: 'vitejs',
 		},	
 		{
-			img: EchartsImage,
+			img: '/uploads/weixin/footer/Echarts.svg',
 			url: 'https://echarts.apache.org/index.html',
 			alt: 'echarts',
 		},
 		{
-			img: vantImage,
+			img: '/uploads/weixin/footer/vant.svg',
 			url: 'https://vant-ui.github.io/vant/',
 			alt: 'vant',
 		},
 		{
-			img: JavaScriptImage,
+			img: '/uploads/weixin/footer/JavaScript.svg',
 			url: 'https://www.javascript.com/',
 			alt: 'javascript',
 		},
 		{
-			img: GithubImage,
+			img: '/uploads/weixin/footer/Github.svg',
 			url: 'https://github.com/',
 			alt: 'github',
 		},
 		{
-			img: naiveImage,
+			img: '/uploads/weixin/footer/naive.svg',
 			url: 'https://www.naiveui.com/',
 			alt: 'naive ui',
 		},
 		{
-			img: piniaImage,
+			img: '/uploads/weixin/footer/pinia.svg',
 			url: 'https://pinia.vuejs.org/',
 			alt: 'pinia',
 		},
 		{
-			img: NodejsImage,
+			img: '/uploads/weixin/footer/Nodejs.svg',
 			url: 'https://nodejs.org/',
 			alt: 'nodejs',
 		},
 		{
-			img: expressImage,
+			img: '/uploads/weixin/footer/express.svg',
 			url: 'https://expressjs.com/',
 			alt: 'express',
 		},
 		{
-			img: scssImage,
+			img: '/uploads/weixin/footer/scss.svg',
 			url: 'https://sass-lang.com/',
 			alt: 'scss',
 		},
 		{
-			img: deepseekImage,
+			img: '/uploads/weixin/footer/deepseek.svg',
 			url: 'https://www.deepseek.com/',
 			alt: 'deepseek',
 		},
 		{
-			img: mongodbImage,
+			img: '/uploads/weixin/footer/mongodb.svg',
 			url: 'https://www.mongodb.com/',
 			alt: 'mongodb',
 		},
 		{
-			img: esLintImage,
+			img: '/uploads/weixin/footer/esLint.svg',
 			url: 'https://eslint.org/',
 			alt: 'eslint',
 		},
 		{
-			img: unocssImage,
+			img: '/uploads/weixin/footer/unocss.svg',
 			url: 'https://unocss.dev/',
 			alt: 'unocss',
 		},
 		{
-			img: vuebitsImage,
+			img: '/uploads/weixin/footer/vuebits.svg',
 			url: 'https://vue-bits.dev/',
 			alt: 'vuebits',
 		},
 		{
-			img: quillImage,
+			img: '/uploads/weixin/footer/quill.svg',
 			url: 'https://quilljs.com/',
 			alt: 'quill',
 		},
 		{
-			img: oxlintImage,
+			img: '/uploads/weixin/footer/oxlint.svg',
 			url: 'https://oxc.rs/docs/guide/usage/linter/config.html',
 			alt: 'oxlint',
 		},
 		{
-			img: btImage,
+			img: '/uploads/weixin/footer/bt.svg',
 			url: 'https://www.bt.cn/new/index.html',
 			alt: 'BT.CN',
 		},
@@ -196,6 +175,14 @@
 <style lang="scss" scoped>
 	.footer-box{
 		margin-top: 40px;
+		border-radius: 4px;
+		background-color: #fff;
+	}
+	:deep(.uni-grid){
+		display: flex;
+		justify-content: center;
+		border: none;
+		gap: 10px;
 	}
 :deep(uni-swiper) {
 	height: 110px !important;
@@ -203,6 +190,10 @@
 :deep(.uni-grid-item) {
 	width: 80px !important;
 	height: 80px !important;
+	.uni-grid-item--border {
+		box-shadow: rgba(0, 0, 0, 0.08) 0px 0px 3px 5px;
+		padding: 6px;
+	}
 }
 .grid-item-box {
 	width: 100%;
@@ -216,6 +207,11 @@
 .footer-info {
 	text-align: center;
 	padding: 10px 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 5px;
 	.text-p1 {
 		font-size: 14px;
 	}

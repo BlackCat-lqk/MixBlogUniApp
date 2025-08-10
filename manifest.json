@@ -50,11 +50,14 @@
     /* 快应用特有相关 */
     "mp-weixin" : {
         /* 小程序特有相关 */
-        "appid" : "",
+        "appid" : "wx64ae555c2edd921c",
         "setting" : {
-            "urlCheck" : false
+            "urlCheck" : true,
+            "postcss" : true,
+            "minified" : true
         },
-        "usingComponents" : true
+        "usingComponents" : true,
+        "permission" : {}
     },
     "vueVersion" : "3",
     "h5" : {
@@ -69,13 +72,13 @@
                         "^/api" : ""
                     }
                 },
-								"/uploads" : {
-								    "target" : "http://localhost:3000",
-								    "changeOrigin" : true,
-								    "pathRewrite" : {
-								        "^/uploads" : ""
-								    }
-								}
+                "/uploads" : {
+                    "target" : "http://localhost:3000",
+                    "changeOrigin" : true,
+                    "pathRewrite" : {
+                        "^/uploads" : ""
+                    }
+                }
             }
         },
         "router" : {

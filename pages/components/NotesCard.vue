@@ -1,19 +1,19 @@
 <template>
   <div v-if="hasNote" class="random-notes-right-box">
-    <uni-card>
+    <uni-card v-for="(item, idx) in props.notesDetail" :key="idx">
         <div class="random-notes-title">
-          <span>{{ props.notesDetail.title }}</span>
+          <span>{{ item.title }}</span>
           <div class="random-notes-date">
-            <p>{{ _formatTime(props.notesDetail.updatedAt).time }}</p>
-              <image class="weather-image" :src="weatherIconsURLs[props.notesDetail.weather]" alt="weather" />
+            <p>{{ _formatTime(item.updatedAt).time }}</p>
+              <image class="weather-image" :src="weatherIconsURLs[item.weather]" alt="weather" />
           </div>
         </div>
       <!-- <n-divider /> -->
       <div class="random-notes-content">
         <p>
-          {{ props.notesDetail.content }}
+          {{ item.content }}
         </p>
-        <image src="@/static/logo-transparent.webp" loading="lazy" alt="笔记内容图片" />
+        <image :src="item.cover" loading="lazy" alt="笔记内容图片" />
       </div>
     </uni-card>
   </div>
@@ -29,14 +29,6 @@
 <script setup>
 	import { ref, reactive } from 'vue'
 import { _formatTime } from '@/utils/publickFun.js'
-import cloudy from '@/static/Weather/cloudy.svg'
-import overcast from '@/static/Weather/overcast.svg'
-import pour from '@/static/Weather/pour.svg'
-import rain from '@/static/Weather/rain.svg'
-import snow from '@/static/Weather/snow.svg'
-import sun from '@/static/Weather/sun.svg'
-import thunderstorm from '@/static/Weather/thunderstorm.svg'
-import wind from '@/static/Weather/wind.svg'
 
 const props = defineProps({
   notesDetail: {
@@ -44,16 +36,16 @@ const props = defineProps({
     default: () => ({}),
   },
 })
-
+console.log(props.notesDetail)
 const weatherIconsURLs = {
-  cloudy,
-  overcast,
-  pour,
-  rain,
-  snow,
-  sun,
-  thunderstorm,
-  wind
+  cloudy: '/uploads/weixin/Weather/cloudy.svg',
+  overcast: '/uploads/weixin/Weather/overcast.svg',
+  pour: '/uploads/weixin/Weather/pour.svg',
+  rain: '/uploads/weixin/Weather/rain.svg',
+  snow: '/uploads/weixin/Weather/snow.svg',
+  sun: '/uploads/weixin/Weather/sun.svg',
+  thunderstorm: '/uploads/weixin/Weather/thunderstorm.svg',
+  wind: '/uploads/weixin/Weather/wind.svg'
 }
 
 const hasNote = ref(true)
