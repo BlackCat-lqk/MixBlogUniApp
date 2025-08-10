@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "notes-card": "../../components/NotesCard"
+  }
+}

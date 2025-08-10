@@ -1,0 +1,1 @@
+"use strict";const t=require("../../common/vendor.js");Math||t.unref(t.QuillEditor)();const e={__name:"QuillView",setup(e){t.Quill.register("modules/syntax",t.Syntax);const n=t.ref(""),o={modules:{toolbar:!1,syntax:{highlight:e=>t.HighlightJS.highlightAuto(e).value}}};return(e,l)=>({a:t.p({"content-type":"html",content:n.value,readonly:!0,options:o})})}};wx.createComponent(e);

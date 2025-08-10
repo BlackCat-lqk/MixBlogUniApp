@@ -1,0 +1,1 @@
+"use strict";const o=require("../common/vendor.js").defineStore("sloganConfigInfo",{state:()=>({sloganConfig:{logoPicture:"",logoName:"",sloganTitle:"",sloganSub1:"",sloganSub2:"",cover:"/uploads/defalut/logo2024.webp"}}),actions:{setSloganConfig(o){this.sloganConfig=o}},persist:!0});exports.useSloganInfoStore=o;

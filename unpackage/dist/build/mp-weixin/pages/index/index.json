@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "Mix Blog",
+  "usingComponents": {
+    "header-nav": "../components/HeaderNav",
+    "home-index": "../home/index",
+    "footer-view": "../components/Footer",
+    "back-to-top": "../components/BackToTop"
+  }
+}

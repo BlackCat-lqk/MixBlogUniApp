@@ -1,0 +1,1 @@
+"use strict";Math||(e+o+s+n)();const e=()=>"../components/HeaderNav.js",o=()=>"../home/index.js",s=()=>"../components/Footer.js",n=()=>"../components/BackToTop.js",t={__name:"index",setup:e=>(e,o)=>({})};wx.createPage(t);

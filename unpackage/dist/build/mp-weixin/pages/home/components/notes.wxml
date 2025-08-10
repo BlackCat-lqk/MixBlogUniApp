@@ -1,0 +1,1 @@
+<view class="article-box data-v-7f8c56b9"><view class="article-title data-v-7f8c56b9">随笔随记</view><notes-card wx:if="{{a}}" class="data-v-7f8c56b9" u-i="7f8c56b9-0" bind:__l="__l" u-p="{{a}}"></notes-card><button class="more-button data-v-7f8c56b9" type="primary" bindtap="{{b}}">更多</button></view>
